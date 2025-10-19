@@ -1,23 +1,24 @@
 // ==UserScript==
 // @name         Open in CyberChef
 // @namespace    https://github.com/bjornmorten/open-in-cyberchef
-// @homepageURL  https://github.com/bjornmorten/open-in-cyberchef
-// @updateURL    https://github.com/bjornmorten/open-in-cyberchef/raw/main/open-in-cyberchef.user.js
-// @downloadURL  https://github.com/bjornmorten/open-in-cyberchef/raw/main/open-in-cyberchef.user.js
-// @supportURL   https://github.com/bjornmorten/open-in-cyberchef/issues
 // @version      1.0.0
 // @description  Quickly open selected text in CyberChef
 // @author       bjornmorten
+// @homepageURL  https://github.com/bjornmorten/open-in-cyberchef
+// @supportURL   https://github.com/bjornmorten/open-in-cyberchef/issues
+// @updateURL    https://github.com/bjornmorten/open-in-cyberchef/raw/main/open-in-cyberchef.user.js
+// @downloadURL  https://github.com/bjornmorten/open-in-cyberchef/raw/main/open-in-cyberchef.user.js
+// @icon         https://github.com/gchq/CyberChef/raw/refs/heads/master/src/web/static/images/favicon.ico
+// @license      MIT
+//
 // @match        *://*/*
 // @exclude      *://*/CyberChef/*
 // @exclude      *://*cyberchef*/*
-// @icon         https://github.com/gchq/CyberChef/raw/refs/heads/master/src/web/static/images/favicon.ico
 // @grant        GM_openInTab
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
 // @run-at       document-end
-// @license      MIT
 // ==/UserScript==
 
 (() => {
