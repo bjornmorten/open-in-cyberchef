@@ -9,8 +9,8 @@ A userscript to open selected text directly in [CyberChef](https://gchq.github.i
 
 ## Usage
 
-- Select text on any page.
-- Press **Alt + C** (or **AltGr + C**) to open it in CyberChef.
+1. Select text on any page.
+2. Press **Alt + C** (or **AltGr + C**) to open it in CyberChef.
 
 ## License
 
