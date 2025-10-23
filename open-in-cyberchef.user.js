@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Open in CyberChef
 // @namespace    https://github.com/bjornmorten/open-in-cyberchef
-// @version      1.0.0
+// @version      1.0.1
 // @description  Quickly open selected text in CyberChef
 // @author       bjornmorten
 // @homepageURL  https://github.com/bjornmorten/open-in-cyberchef
@@ -58,8 +58,11 @@
       url += `#input=${encodeURIComponent(toBase64(text))}`;
 
       const recipe = detectRecipe(text);
+      const useMagic = await GM_getValue("use_magic_recipe", true);
       if (recipe) {
         url += "&recipe=" + encodeURIComponent(recipe);
+      } else if(useMagic) {
+        url += "&recipe=" + encodeURIComponent("Magic(3,false,false,'')");
       }
     }
     GM_openInTab(url, { active: true });
@@ -76,6 +79,13 @@
     const url = newUrl.trim() || DEFAULT_INSTANCE;
     await GM_setValue("cyberchef_instance", url);
     alert(`Instance set to: ${url}`);
+  });
+
+  GM_registerMenuCommand("Toggle magic recipe", async () => {
+    const current = await GM_getValue("use_magic_recipe", true);
+    const newValue = !current;
+    await GM_setValue("use_magic_recipe", newValue);
+    alert(`Magic recipe is now ${newValue ? "enabled" : "disabled"}.`);
   });
 
   document.addEventListener("keydown", async (e) => {
